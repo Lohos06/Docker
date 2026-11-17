@@ -1,5 +1,7 @@
+name: forge
 services:
   api:
+    container_name: forge-api
     build: /app
     ports:
       - "8000:3000"
@@ -10,8 +12,11 @@ services:
       PGDATABASE: ${POSTGRES_DB}
     depends_on:
       - db
+    restart: 
+      on-failure
 
   db:
+    container_name: forge-db
     image: postgres:18-alpine3.24
     environment:
       POSTGRES_USER: ${POSTGRES_USER}

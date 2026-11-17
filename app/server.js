@@ -13,7 +13,7 @@ async function connecterLaBase() {
       id serial PRIMARY KEY,
       nom text NOT NULL,
       type text NOT NULL,
-      composant text NOT NULL,
+      composant text NOT NULL
     )
   `);
   baseConnectee = true;
@@ -33,7 +33,7 @@ app.get("/api/armes", async (req, res) => {
     return res.status(503).json({ erreur: "base non connectée" });
   }
   const { rows } = await pool.query(
-    "SELECT id, salle, to_char(jour, 'YYYY-MM-DD') AS jour, creneau, motif FROM reservations ORDER BY jour, creneau, id"
+    "SELECT id, nom, type, composant FROM armes ORDER BY id"
   );
   res.json(rows);
 });
@@ -50,7 +50,7 @@ app.post("/api/armes", async (req, res) => {
   }
 
   const { rows } = await pool.query(
-    "INSERT INTO reservations (nom, type, composant) VALUES ($1, $2, $3) RETURNING id, nom, type, composant",
+    "INSERT INTO armes (nom, type, composant) VALUES ($1, $2, $3) RETURNING id, nom, type, composant",
     [nom, type, composant]
   );
   res.status(201).json(rows[0]);

@@ -21,6 +21,7 @@ async function connecterLaBase() {
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 
 // affihcer la page index.html
 app.get("/", (req, res) => {

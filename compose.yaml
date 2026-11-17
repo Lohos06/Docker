@@ -25,5 +25,21 @@ services:
     volumes:
       - forge:/var/lib/postgresql/18/docker
 
+  adminer:
+    container_name: forge-adminer
+    image: adminer:6.3.0
+    restart: always
+    environment:
+      PGHOST: db
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${POSTGRES_DB}
+    volumes:
+      - ./adminer-prefill.php:/var/www/html/plugins-enabled/prefill.php:ro
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
 volumes:
   forge:

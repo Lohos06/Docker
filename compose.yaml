@@ -2,7 +2,7 @@ name: forge
 services:
   api:
     container_name: forge-api
-    build: /app
+    build: ./app
     ports:
       - "8000:3000"
     environment:

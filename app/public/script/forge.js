@@ -14,4 +14,5 @@ document.getElementById("formulaire").addEventListener("submit", async (e) => {
     const erreur = await reponse.json();
     message.textContent = "Impossible d'enregistrer : " + erreur.erreur;
   }
+  rafraichir();
 });

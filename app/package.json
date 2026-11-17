@@ -1,0 +1,14 @@
+{
+  "name": "forge-docker",
+  "version": "1.0.0",
+  "description": "Une forge d'armes basée sur docker",
+  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}

@@ -9,4 +9,4 @@ COPY . .
 
 USER node
 
-CMD ["npm", "start"]
+CMD ["npm", "node server.js"]

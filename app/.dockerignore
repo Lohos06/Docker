@@ -1,3 +1,2 @@
 .env
-npm-debug.log
-nodes_modules/
+node_modules/

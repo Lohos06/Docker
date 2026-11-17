@@ -4,40 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Forge</title>
-  <link rel="stylesheet" href="/style/main.css">
+  <link rel="stylesheet" href="/style/header.css">
   
   <script src="/script/raffraichissement.js" defer></script>
   <script src="/script/forge.js" defer></script>
 </head>
 <body>
-  <h1>Forge</h1>
+  <header>
+    <h1>Forge</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Armes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Composant</th>
+          </tr>
+        </thead>
+        <tbody id="liste"></tbody>
+      </table>
+    </section>
 
-  <section>
-    <h2>Armes</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Type</th>
-          <th>Composant</th>
-        </tr>
-      </thead>
-      <tbody id="liste">
-        <tr>
-          <td colspan="4">Chargement...</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section>
+        <h2>Forger une arme</h2>
+      <form id="formulaire">
+        <input name="nom" type="text" placeholder="Nom" required>
+        <input name="type" type="text" placeholder="épée, hache, batte" required>
+        <input name="composant" type="text" placeholder="bois, acier, mithril" required>
+        <button type="submit">Forger</button>
+      </form>
+      <p id="message"></p>
+    </section>
+  </main>
 
-
-  <h2>Forger une arme</h2>
-  <form id="formulaire">
-    <input name="nom" type="text" placeholder="Nom" required>
-    <input name="type" type="text" placeholder="épée, hache, batte" required>
-    <input name="composant" type="text" placeholder="bois, acier, mithril" required>
-    <button type="submit">Forger</button>
-  </form>
-  <p id="message"></p>
+  <footer>
+    <p>Assistance : forgeron.online@gmail.com</p>
+    <p>© 2026 Forgeron. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>

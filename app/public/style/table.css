@@ -1,0 +1,30 @@
+section { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+}
+
+table { 
+    width: 80%;
+    border-collapse: collapse; 
+}
+
+th {
+    background: var(--primary-color); 
+    color: var(--bg-light);
+    text-align: left;
+    padding: 1rem; 
+}
+
+td { 
+    background: var(--secondary-color); 
+    color: var(--bg-light);
+    padding: 1rem; 
+}
+
+tr:hover td { 
+    background: var(--bg-dark);
+    color: var(--accent-color); 
+}
